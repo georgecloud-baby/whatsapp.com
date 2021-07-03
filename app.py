@@ -103,5 +103,5 @@ def app():
         return respond(f"At your nearest clinic or call the ministry of health toll free number 2019,393")
 
 
-if __name__=="__main__":
-    app.run()
+#if __name__=="__main__":
+#    app.run()
