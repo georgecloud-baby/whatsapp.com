@@ -1,6 +1,6 @@
 
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
@@ -14,7 +14,7 @@ time=str(date_time[3])+":"+str(date_time[4])
 
 
 
-#load_dotenv()
+load_dotenv()
 
 app = Flask(__name__)
 TWILIO_SID = "ACaffe33385ebba23a9fb41bd774e87d2e"
@@ -27,7 +27,7 @@ def respond(message):
     return str(response)
 
 @app.route('/message', methods=['POST'])
-def app():
+def application():
     message = request.form.get('Body').lower()
     if message == "link":
         return respond(f"https://console.twilio.com/us1/billing/manage-billing/upgrade?frameUrl=%2Fconsole%2Fbilling%2Fupgrade%3F__override_layout__%3Dembed%26bifrost%3Dtrue%26x-target-region%3Dus1") 
@@ -103,5 +103,5 @@ def app():
         return respond(f"At your nearest clinic or call the ministry of health toll free number 2019,393")
 
 
-#if __name__=="__main__":
-#    app.run()
+if __name__=="__main__":
+    app.run()
