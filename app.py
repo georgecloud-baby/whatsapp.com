@@ -27,7 +27,7 @@ def respond(message):
     return str(response)
 
 @app.route('/message', methods=['POST'])
-def reply():
+def app():
     message = request.form.get('Body').lower()
     if message == "link":
         return respond(f"https://console.twilio.com/us1/billing/manage-billing/upgrade?frameUrl=%2Fconsole%2Fbilling%2Fupgrade%3F__override_layout__%3Dembed%26bifrost%3Dtrue%26x-target-region%3Dus1") 
